@@ -18,7 +18,7 @@ $cek = $member->ceklogin($data);
 
 if ($cek){
     $_SESSION["MEMBER"] = $cek;
-    header("Location:http://localhost/MBKM/TemplateAdmin/admin/index.php?url=produk");
+    header("Location:http://localhost/MBKM/Projek_utuh_php_nativ/admin/index.php?url=produk");
     exit;
 }else{
     echo "<script>alert('Username/Password anda salah!'); history.back();</script>";

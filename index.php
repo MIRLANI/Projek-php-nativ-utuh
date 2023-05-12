@@ -1,6 +1,8 @@
 <?php
 
 include_once 'header.php';
+include_once __DIR__. '/admin/Model/Produk.php';
+include_once __DIR__. '/admin/Koneksi.php';
 
 ?>
 <?php

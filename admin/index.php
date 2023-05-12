@@ -1,10 +1,6 @@
 <?php 
 
 session_start();
-// MENGAMBIL DAN MEMPROSES FILE DI BAGIAN ATAS
-require_once "top.php";
-// MEMANGGIL DAN MEMPROSES FILE DI BAGIAN TENGAH
-require_once "menu.php";
 
 require_once __DIR__ ."/koneksi.php" ;
 require_once __DIR__ . "/Model/Produk.php" ;
@@ -13,6 +9,13 @@ require_once __DIR__ . "/Model/Pelanggan.php" ;
 require_once __DIR__ . "/Model/Pesanan.php" ;
 require_once __DIR__ . "/Model/Produk.php" ;
 require_once __DIR__ . "/Model/member.php" ;
+
+$sesi = $_SESSION['MEMBER'];
+if (isset($sesi)){
+// MENGAMBIL DAN MEMPROSES FILE DI BAGIAN ATAS
+require_once "top.php";
+// MEMANGGIL DAN MEMPROSES FILE DI BAGIAN TENGAH
+require_once "menu.php";
 
 
 ?>
@@ -42,5 +45,7 @@ require_once __DIR__ . "/Model/member.php" ;
 <?php 
 // MEMANGGIL FILE DIBAGIAN BAWAH
 require_once "bottom.php";
-
+                    }else{
+                       echo "<script>alert('Anda tidak boleh masuk!'); history.back();</script>";
+                    }
 ?>

@@ -32,7 +32,9 @@ if (isset($sesi)){ ?>
             DataTable Example -->
 
             <!-- membuat tombol yang mengarahkan ke file produk_form.php -->
+            <?php if ($sesi['role'] != 'staff') { ?>
             <a href="index.php?url=produk_form" class="btn btn-primary btn-sm">Tambah</a>
+            <?php } ?>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -73,8 +75,9 @@ if (isset($sesi)){ ?>
                         <td><?= $row["jenis_produk_id"] ?> </td>
                         <td>
                             <form action="produk_hapus.php" method="post">
-                                <?php if ($sesi['role'] != 'staff') { ?>
+
                                 <a href="index.php?url=produk_detail&id=<?=$row['id'] ?>" class="btn btn-info btn-sm">Detail</a>
+                                <?php if ($sesi['role'] == 'admin') { ?>
                                 <a href="index.php?url=produk_form&ededit=<?=$row['id'] ?>" class="btn btn-warning btn-sm">Ubah</a>
                                 <button type="submit" name="proses" value="<?=$row["id"] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan dihapus?')">Hapus</button>
                                 <input type="hidden" name="idx" value="<?= $row['id'] ?>">

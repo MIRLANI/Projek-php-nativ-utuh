@@ -12,7 +12,7 @@ $kar = !empty($edit) ? $model->getKartu($edit) : array();
 <!-- 
 
 
-lani ini stash 1
+lani ini stash 2
  -->
 <br>
 <form method="post" action="kartu_controller.php">

@@ -9,7 +9,11 @@ $edit = $_REQUEST["edit"];
 $kar = !empty($edit) ? $model->getKartu($edit) : array();
 
 ?>
+<!-- 
 
+
+lani ini stash 1
+ -->
 <br>
 <form method="post" action="kartu_controller.php">
       <div class="form-group row">
